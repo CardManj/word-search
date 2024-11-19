@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  #wordsearch {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+    user-select: none;
+  }
+  
+  .letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .letter:hover {
+    background-color: #33a7af;
+    color: white;
+  }
+  
+  .found {
+    color: white;
+  }
+  
+  #words {
+    margin-top: 20px;
+  }
+  
+  #word-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #word-list li {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
