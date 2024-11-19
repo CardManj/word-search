@@ -11,15 +11,16 @@ body {
   
   .container {
     text-align: center;
+    position: relative;
   }
   
   #wordsearch {
-    position: relative;
     display: grid;
     grid-template-columns: repeat(10, 30px);
     gap: 5px;
     justify-content: center;
     margin: 20px auto;
+    position: relative;
     user-select: none;
   }
   
@@ -41,7 +42,11 @@ body {
     color: white;
   }
   
-  .found {
+  .letter.selected {
+    background-color: #33a7af;
+  }
+  
+  .letter.found {
     color: white;
   }
   
@@ -58,5 +63,13 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #333;
+  }
+  
+  #svg-lines {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
   }
   

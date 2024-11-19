@@ -1,6 +1,6 @@
 // Palabras para la sopa de letras
 const words = ["APPLE", "BANANA", "ORANGE", "GRAPE", "WATERMELON"];
-const gridSize = 10; // Tamaño de la cuadrícula (10x10)
+const gridSize = 14; // Tamaño de la cuadrícula (10x10)
 
 // Referencias al DOM
 const wordSearchContainer = document.getElementById("wordsearch");
