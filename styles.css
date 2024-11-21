@@ -17,7 +17,8 @@ body {
   #wordsearch {
     display: grid;
     grid-template-columns: repeat(10, 30px);
-    gap: 5px;
+    gap: 20px;
+    row-gap: 8px;
     justify-content: center;
     margin: 20px auto;
     position: relative;
@@ -28,8 +29,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: #ffffff;
     border: 1px solid #ccc;
     text-transform: uppercase;
@@ -65,11 +66,5 @@ body {
     color: #333;
   }
   
-  #svg-lines {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
-  }
+
   

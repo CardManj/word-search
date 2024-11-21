@@ -1,21 +1,11 @@
 // Palabras para la sopa de letras
-const words = ["APPLE", "BANANA", "ORANGE", "GRAPE", "WATERMELON"];
+const words = ["APPLE", "BANANA", "ORANGE", "GRAPE", "WATERMELON", "PEAR", "CHERRY", "PINEAPPLE","MANGO"];
 const gridSize = 10; // Tamaño de la cuadrícula (10x10)
 
 // Referencias al DOM
 const wordSearchContainer = document.getElementById("wordsearch");
 const wordListContainer = document.getElementById("word-list");
 
-// Agregar un contenedor SVG para las líneas
-const svgContainer = document.createElement("svg");
-svgContainer.setAttribute("id", "svg-lines");
-svgContainer.setAttribute("width", "100%");
-svgContainer.setAttribute("height", "100%");
-svgContainer.style.position = "absolute";
-svgContainer.style.top = "0";
-svgContainer.style.left = "0";
-svgContainer.style.pointerEvents = "none";
-document.body.appendChild(svgContainer);
 
 // Variables para la selección
 let selectedLetters = [];
@@ -130,20 +120,8 @@ function renderWordList(words) {
   });
 }
 
-// Crear una línea SVG
-function createLine(x1, y1, x2, y2, color) {
-  const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  line.setAttribute("x1", x1);
-  line.setAttribute("y1", y1);
-  line.setAttribute("x2", x2);
-  line.setAttribute("y2", y2);
-  line.setAttribute("stroke", color);
-  line.setAttribute("stroke-width", "10");
-  svgContainer.appendChild(line);
-  return line;
-}
 
-// Generar un color aleatorio
+// Generar un color aleatorio a la selección
 function getRandomColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
@@ -158,8 +136,6 @@ function handleMouseDown(e) {
   const rect = cell.getBoundingClientRect();
   startX = rect.left + rect.width / 2;
   startY = rect.top + rect.height / 2;
-
-  currentLine = createLine(startX, startY, startX, startY, "black");
 }
 
 function handleMouseOver(e) {
@@ -173,10 +149,7 @@ function handleMouseOver(e) {
       const endX = rect.left + rect.width / 2;
       const endY = rect.top + rect.height / 2;
 
-      if (currentLine) {
-        currentLine.setAttribute("x2", endX);
-        currentLine.setAttribute("y2", endY);
-      }
+
     }
   }
 }
@@ -202,24 +175,35 @@ function handleMouseUp() {
       cell.style.backgroundColor = color;
     });
 
-    if (currentLine) {
-      currentLine.setAttribute("stroke", color);
-    }
 
     // Eliminar la palabra de la lista
-    const wordIndex = words.indexOf(selectedWord);
-    if (wordIndex !== -1) words.splice(wordIndex, 1);
+  // Verifica si la palabra seleccionada está en la lista
+  const wordIndex = words.indexOf(selectedWord);
+  if (wordIndex !== -1) {
+    // Aplicar el estilo de tachado a la palabra encontrada en la lista
+    const listItems = wordListContainer.querySelectorAll("li");
+    
+    listItems.forEach((item) => {
+      if (item.textContent === selectedWord) {
+        item.style.color = color; // Cambiar color de la palabra
+        item.style.textDecoration = "underline"; // Tachado
+      }
+    });
+  }}
 
-    const reversedIndex = words.indexOf(reversedWord);
-    if (reversedIndex !== -1) words.splice(reversedIndex, 1);
+  // Verifica si la palabra invertida está en la lista
+  const reversedIndex = words.indexOf(reversedWord);
+  if (reversedIndex !== -1) {
+    // Aplicar el estilo de tachado a la palabra encontrada en la lista
+    const listItems = wordListContainer.querySelectorAll("li");
 
-    updateWordList();
-  } else {
-    // Eliminar la línea si no forma una palabra
-    if (currentLine) {
-      svgContainer.removeChild(currentLine);
-    }
+    listItems.forEach((item) => {
+      if (item.textContent === reversedWord) {
+        item.style.textDecoration = "line-through"; // Tachado
+      }
+    });
   }
+
 
   // Limpiar selección
   selectedLetters.forEach((cell) => cell.classList.remove("selected"));

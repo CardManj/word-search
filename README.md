@@ -36,7 +36,9 @@ Este proyecto es una **Sopa de Letras Interactiva** desarrollada en JavaScript. 
 ---
 
 ## Estructura de Archivos
-. ├── index.html // Archivo HTML para la estructura base del proyecto. ├── styles.css // Archivo CSS para los estilos. └── script.js // Archivo JavaScript que contiene toda la lógica del proyecto.
+- index.html // Archivo HTML para la estructura base del proyecto. 
+- styles.css // Archivo CSS para los estilos. 
+- script.js // Archivo JavaScript que contiene toda la lógica del proyecto.
 
 ---
 
@@ -109,8 +111,6 @@ Este proyecto es una **Sopa de Letras Interactiva** desarrollada en JavaScript. 
 ```
 
 ### script. js 
-# Sopa de Letras Interactiva
-
 El código completo de `script.js` se encuentra en la sección inicial del proyecto.
 
 ---
@@ -198,27 +198,24 @@ Muestra la lista de palabras que el usuario debe buscar.
 #### **`handleMouseDown`**
 Registra el inicio de la selección:
 - Marca la celda inicial.
-- Crea una línea SVG para mostrar la selección.
+- Crea una línea de color para mostrar la selección.
 
 #### **`handleMouseOver`**
 Continúa la selección:
 - Agrega las celdas al conjunto de letras seleccionadas.
-- Extiende la línea SVG hasta la posición del ratón.
+- Extiende la línea de color hasta la posición del ratón.
 
 #### **`handleMouseUp`**
 Finaliza la selección:
 - Compara las letras seleccionadas con la lista de palabras.
 - Si coinciden:
-  - Cambia el color de la línea y las celdas seleccionadas.
+  - Cambia el color de las celdas seleccionadas.
   - Marca la palabra como encontrada y la elimina de la lista de palabras restantes.
 - Si no coinciden, elimina la selección y la línea.
 
 ---
 
-### 4. **Lógica de Colores y Línea**
-
-#### **`createLine`**
-Crea una línea SVG para representar la selección del usuario.
+### 4. **Lógica de Colores**
 
 #### **`getRandomColor`**
 Genera un color aleatorio que se aplica a las palabras encontradas.
@@ -282,17 +279,7 @@ Ajusta el valor de la variable `gridSize` para definir las dimensiones de la sop
 
 ---
 
-## Mejoras Futuras
-
-- **Soporte para palabras en direcciones inversas.**
-- **Temporizador para modo contrarreloj.**
-- **Puntuación basada en el tiempo o número de intentos.**
-- **Compatibilidad con listas de palabras dinámicas (por ejemplo, desde una base de datos).**
-- **Animaciones al encontrar palabras.**
-
----
-
 ## Conclusión
 
-Este proyecto es un ejemplo sencillo pero completo de una sopa de letras interactiva, perfecta para practicar habilidades de JavaScript, manipulación del DOM, y uso de gráficos SVG. ¡Disfrútalo y siéntete libre de expandirlo según tus necesidades!
+Este proyecto es un ejemplo sencillo pero completo de una sopa de letras dinámica, perfecta para practicar habilidades de JavaScript y manipulación del DOM ¡Disfrútalo y siéntete libre de expandirlo según tus necesidades!
 
