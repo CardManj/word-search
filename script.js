@@ -1,6 +1,5 @@
 // Palabras para la sopa de letras
 const words = ["APPLE", "BANANA", "ORANGE", "GRAPE", "WATERMELON", "PEAR", "CHERRY", "PINEAPPLE","MANGO"];
-const gridSize = 10; // Tamaño de la cuadrícula (10x10)
 
 // Referencias al DOM
 const wordSearchContainer = document.getElementById("wordsearch");
@@ -13,6 +12,16 @@ let isMouseDown = false;
 let startX = 0;
 let startY = 0;
 let currentLine = null;
+
+// Obtener la longitud de la palabra más larga
+const longestWordLength = Math.max(...words.map(word => word.length));
+
+// Calcular el tamaño de la cuadrícula
+const gridSize = longestWordLength + 1; // Por ejemplo: longitud de la palabra más larga + 5
+
+
+// Aplicar dinámicamente el tamaño de las columnas al contenedor
+wordSearchContainer.style.gridTemplateColumns = `repeat(${gridSize}, 30px)`;
 
 // Generar la sopa de letras
 function generateWordSearch(words, gridSize) {

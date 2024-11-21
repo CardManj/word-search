@@ -11,7 +11,7 @@ Este proyecto es una **Sopa de Letras Interactiva** desarrollada en JavaScript. 
 - [ ] Temporizador para crear un modo de juego contra reloj.
 - [ ] Integración con bases de datos para cargar listas de palabras dinámicamente.
 - [ ] Integración de palabras automáticas 
-- [ ] Cambio automático del Grid según el tamaño de la palabra más grande (si la palabra más larga tiene 10 letras el juego debería se 10x10 mínimo)
+- [x] Cambio automático del Grid según el tamaño de la palabra más grande (si la palabra más larga tiene 10 letras el juego debería ser 10x10 mínimo)
 
 
 ---

@@ -16,7 +16,7 @@ body {
   
   #wordsearch {
     display: grid;
-    grid-template-columns: repeat(10, 30px);
+    grid-template-columns: repeat(10, 30px); /* Este valor se actualizará dinámicamente */
     gap: 20px;
     row-gap: 8px;
     justify-content: center;
@@ -24,6 +24,7 @@ body {
     position: relative;
     user-select: none;
   }
+  
   
   .letter {
     display: flex;
