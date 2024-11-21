@@ -6,12 +6,12 @@ Este proyecto es una **Sopa de Letras Interactiva** desarrollada en JavaScript. 
 ---
 ## Mejoras Futuras
 
-[ ] Soporte para direcciones inversas (derecha a izquierda o abajo hacia arriba).
-[ ] Animaciones al completar una palabra.
-[ ] Temporizador para crear un modo de juego contra reloj.
-[ ] Integración con bases de datos para cargar listas de palabras dinámicamente.
-[ ] Integración de palabras automáticas 
-[ ] Cambio automático del Grid según el tamaño de la palabra más grande (si la palabra más larga tiene 10 letras el juego debería se 10x10 mínimo)
+- [ ] Soporte para direcciones inversas (derecha a izquierda o abajo hacia arriba).
+- [ ] Animaciones al completar una palabra.
+- [ ] Temporizador para crear un modo de juego contra reloj.
+- [ ] Integración con bases de datos para cargar listas de palabras dinámicamente.
+- [ ] Integración de palabras automáticas 
+- [ ] Cambio automático del Grid según el tamaño de la palabra más grande (si la palabra más larga tiene 10 letras el juego debería se 10x10 mínimo)
 
 
 ---
